@@ -16,12 +16,12 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onTabChange }) => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 h-16 bg-white/80 backdrop-blur-md border-b border-gray-100 flex items-center transition-all duration-500">
+    <nav className="fixed top-0 left-0 right-0 z-50 h-16 bg-black border-b border-gray-900 flex items-center transition-all duration-500">
       <div className="max-w-5xl mx-auto px-6 w-full flex justify-between items-center">
         {/* Site Title / Home Link */}
         <button 
           onClick={() => onTabChange('home')} 
-          className="text-lg font-semibold tracking-tight text-black hover:opacity-70 transition-opacity"
+          className="text-lg font-semibold tracking-tight text-[#ededed] hover:opacity-70 transition-opacity"
         >
           Ishit Singh
         </button>
@@ -34,13 +34,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onTabChange }) => {
               onClick={() => onTabChange(tab.id)}
               className={`text-sm font-medium transition-all duration-300 relative py-1 ${
                 activeTab === tab.id 
-                  ? 'text-black' 
-                  : 'text-gray-500 hover:text-black'
+                  ? 'text-[#ededed]' 
+                  : 'text-gray-500 hover:text-[#ededed]'
               }`}
             >
               {tab.label}
               {activeTab === tab.id && (
-                <span className="absolute bottom-0 left-0 w-full h-px bg-black rounded-full animate-in fade-in duration-300"></span>
+                <span className="absolute bottom-0 left-0 w-full h-px bg-[#ededed] animate-in fade-in duration-300"></span>
               )}
             </button>
           ))}

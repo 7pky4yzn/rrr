@@ -51,13 +51,13 @@ function App() {
     <>
       {!introComplete && <IntroAnimation onComplete={() => setIntroComplete(true)} />}
       
-      <div className={`antialiased bg-white selection:bg-blue-100 selection:text-blue-900 min-h-screen flex flex-col ${introComplete ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`antialiased bg-black text-[#ededed] selection:bg-gray-800 selection:text-white min-h-screen flex flex-col ${introComplete ? 'opacity-100' : 'opacity-0'}`}>
         
         {introComplete && (
           <Navbar activeTab={activeTab} onTabChange={handleTabChange} />
         )}
         
-        <main className={`flex-grow transition-all duration-1000 ${showContent ? 'opacity-100 blur-0' : 'opacity-0 blur-sm'}`}>
+        <main className={`flex-grow transition-opacity duration-1000 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
           {/* Key prop triggers the animation on tab change */}
           <div key={activeTab} className="tab-enter">
              {renderTabContent()}
